@@ -40,6 +40,12 @@ const search = "#ForaCamargo";
 
   await page.keyboard.press("Enter");
 
+  const latestSelector = '#react-root > div > div > div.css-1dbjc4n.r-18u37iz.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-14lw9ot.r-jxzhtn.r-1ljd8xs.r-13l2t4g.r-1phboty.r-1jgb5lz.r-11wrixw.r-61z16t.r-1ye8kvj.r-13qz1uu.r-184en5c > div > div.css-1dbjc4n.r-1e5uvyk.r-aqfbo4.r-6026j.r-gtdqiz.r-1gn8etr.r-1g40b8q > div:nth-child(2) > nav > div > div.css-1dbjc4n.r-1adg3ll.r-16y2uox.r-1wbh5a2.r-1pi2tsx.r-1udh08x > div > div:nth-child(2) > a'
+
+  await page.waitForSelector(latestSelector);
+
+  await page.click(latestSelector);
+
   await page.waitForTimeout(2000);
 
   let authorsSet = new Set()
